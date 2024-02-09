@@ -70,5 +70,6 @@ module.exports = {
       { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
     ],
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'eol-last': 'warn',
   }
 };

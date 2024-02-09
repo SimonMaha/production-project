@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { InitOptions } from 'i18next/typescript/options';
 
 i18n
   .use(Backend)
@@ -19,6 +20,6 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json'
     }
-  });
+  } as InitOptions);
 
 export default i18n;
