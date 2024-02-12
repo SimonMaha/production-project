@@ -1,5 +1,8 @@
 {
   "test example": "Test example",
   "language": "English",
-  "sidebar": "Toggle"
+  "sidebar": "Toggle",
+  "page not found": "Page not found",
+  "an unexpected error occurred": "An unexpected error occurred",
+  "reload page": "Reload page"
 }

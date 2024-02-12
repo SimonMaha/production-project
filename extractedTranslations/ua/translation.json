@@ -1,8 +1,12 @@
 {
+  "Page not found": "Page not found",
   "about": "about",
   "about page": "about page",
+  "an unexpected error occurred": "an unexpected error occurred",
   "language": "language",
   "main": "main",
   "main page": "main page",
+  "page not found": "page not found",
+  "reload page": "reload page",
   "sidebar": "sidebar"
 }

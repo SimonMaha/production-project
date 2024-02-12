@@ -1,5 +1,8 @@
 {
   "test example": "Тестовий приклад",
   "language": "Українська",
-  "sidebar": "Натисни"
+  "sidebar": "Натисни",
+  "page not found": "Сторінку не знайдено",
+  "an unexpected error occurred": "Виникла непередбачувана помилка",
+  "reload page": "Перезавантажити сторінку"
 }
