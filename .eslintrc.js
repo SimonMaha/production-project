@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
@@ -71,5 +72,6 @@ module.exports = {
     ],
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     'eol-last': 'warn',
+    'max-len': ['error', { code: 120, ignoreComments: true }],
   }
 };
