@@ -5,7 +5,7 @@ const MainPage = () => {
 
   return (
     <div>
-      { t('main page' as never) }
+      { t('main page') }
     </div>
   );
 };

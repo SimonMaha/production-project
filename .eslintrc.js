@@ -26,6 +26,12 @@ module.exports = {
       parserOptions: {
         sourceType: 'script'
       }
+    },
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      }
     }
   ],
   parser: '@typescript-eslint/parser',
@@ -70,8 +76,12 @@ module.exports = {
       'warn',
       { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
     ],
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'eol-last': 'warn',
     'max-len': ['error', { code: 120, ignoreComments: true }],
-  }
+    'import/extensions': 'off',
+  },
+  globals: {
+    '__IS_DEV__': true,
+  },
 };
