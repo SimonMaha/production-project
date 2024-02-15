@@ -14,9 +14,11 @@ jobs:
         node-version: [ 21.x ]
 
     steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create a Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
