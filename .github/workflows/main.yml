@@ -7,13 +7,16 @@ on:
     branches: [ master  ]
 
 jobs:
-  ppeline:
-    runs-on: macos-latest
+  pipeline:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 21.x ]
 
     steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
