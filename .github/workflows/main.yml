@@ -26,6 +26,8 @@ jobs:
         run: npm config get registry
       - name: install module
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
