@@ -24,6 +24,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Check npm registry
         run: npm config get registry
+      - name: Check who am I
+        run: npm whoami
       - name: install module
         run: npm install
       - name: build production project
