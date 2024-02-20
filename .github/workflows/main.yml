@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{ secrets.NPM_TOKEN_JFROG }}
+          repo-token: ${{ secrets.NPM_TOKEN }}
       - uses: actions/checkout@v4
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -25,7 +25,7 @@ jobs:
       - name: Check npm registry
         run: npm config get registry
       - name: install module
-        run: npm install --registry=https://syte.jfrog.io/artifactory/api/npm/npm/
+        run: npm install
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
