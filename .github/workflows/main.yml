@@ -23,13 +23,13 @@ jobs:
         with:
           always-auth: true
           node-version: ${{ matrix.node-version }}
-          registry-url: https://syte.jfrog.io/artifactory/api/npm/npm/
+          registry-url: https://registry.npmjs.org
       - name: Check npm registry
         run: npm config get registry
       - name: install module
         run: npm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_JFROG }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
