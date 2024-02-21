@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     jest: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
@@ -82,6 +83,7 @@ module.exports = {
     'max-len': [ 'error', { code: 120, ignoreComments: true } ],
     'import/extensions': 'off',
     'react/display-name': 'off',
+    '@typescript-eslint/no-var-requires': 'warn',
   },
   globals: {
     '__IS_DEV__': true,
