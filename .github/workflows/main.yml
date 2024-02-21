@@ -14,9 +14,9 @@ jobs:
         node-version: [ 21.x ]
 
     steps:
-#      - uses: actions/labeler@v4
-#        with:
-#          repo-token: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.TOKEN_CLASSIC }}
       - uses: actions/checkout@v4
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -26,8 +26,6 @@ jobs:
         run: npm config get registry
       - name: install module
         run: npm install
-        with:
-          github_token: ${{ secrets.TOKEN_CLASSIC }}
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
