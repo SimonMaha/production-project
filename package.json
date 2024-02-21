@@ -22,6 +22,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "i18next": "^23.8.2"
   },
   "loki": {
     "configurations": {
