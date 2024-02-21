@@ -22,7 +22,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "react": "^18.2.0"
   },
   "loki": {
     "configurations": {
