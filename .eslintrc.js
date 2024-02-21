@@ -4,35 +4,41 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
+  ],
   settings: {
     react: {
       version: 'detect',
-    }
+    },
   },
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
       files: [
-        '.eslintrc.{js,cjs}'
+        '.eslintrc.{js,cjs}',
       ],
       parserOptions: {
-        sourceType: 'script'
-      }
+        sourceType: 'script',
+      },
     },
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: [ '**/src/**/*.test.{ts,tsx}' ],
       rules: {
         'i18next/no-literal-string': 'off',
-      }
-    }
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     '@typescript-eslint',
@@ -43,38 +49,39 @@ module.exports = {
   rules: {
     indent: [
       'error',
-      2
+      2,
     ],
     'linebreak-style': [
       'error',
-      'unix'
+      'unix',
     ],
     quotes: [
       'error',
-      'single'
+      'single',
     ],
     semi: [
       'error',
-      'always'
+      'always',
     ],
     'object-curly-spacing': [
       'error',
-      'always'
+      'always',
     ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-	  'react/react-in-jsx-scope': 'off',
+    'react/react-in-jsx-scope': 'off',
     'no-mixed-spaces-and-tabs': 'off',
     'react/button-has-type': 'error',
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',
-      { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
+      { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' },
     ],
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+    'i18next/no-literal-string': [ 'error', { markupOnly: true, ignoreAttribute: [ 'data-testid', 'to' ] } ],
     'eol-last': 'warn',
-    'max-len': ['error', { code: 120, ignoreComments: true }],
+    'max-len': [ 'error', { code: 120, ignoreComments: true } ],
     'import/extensions': 'off',
+    'react/display-name': 'off',
   },
   globals: {
     '__IS_DEV__': true,

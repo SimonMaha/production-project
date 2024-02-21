@@ -16,6 +16,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   static getDerivedStateFromError(error: Error) {
+    console.log('error message in getDerivedStateFromError: ', error);
     return { hasError: true };
   }
 
