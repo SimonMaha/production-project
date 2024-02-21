@@ -14,9 +14,6 @@ jobs:
         node-version: [ 21.x ]
 
     steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.TOKEN_CLASSIC }}
       - uses: actions/checkout@v4
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -24,6 +21,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Check npm registry
         run: npm config get registry
+      - name: Login to npm
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - name: checking login
+        run: npm whoami
       - name: install module
         run: npm install
       - name: build production project
