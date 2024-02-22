@@ -30,9 +30,10 @@ module.exports = {
       },
     },
     {
-      files: [ '**/src/**/*.test.{ts,tsx}' ],
+      files: [ '**/src/**/*.{test,stories}.{ts,tsx}' ],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off',
       },
     },
   ],
@@ -46,6 +47,7 @@ module.exports = {
     'react',
     'unused-imports',
     'i18next',
+    'react-hooks',
   ],
   rules: {
     indent: [
@@ -84,6 +86,8 @@ module.exports = {
     'import/extensions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-var-requires': 'warn',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   },
   globals: {
     '__IS_DEV__': true,
