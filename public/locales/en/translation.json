@@ -6,5 +6,7 @@
   "an unexpected error occurred": "An unexpected error occurred",
   "reload page": "Reload page",
   "short language": "EN",
-  "login": "Login"
+  "login": "Login",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }

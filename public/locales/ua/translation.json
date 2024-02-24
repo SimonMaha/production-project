@@ -6,5 +6,7 @@
   "an unexpected error occurred": "Виникла непередбачувана помилка",
   "reload page": "Перезавантажити сторінку",
   "short language": "UA",
-  "login": "Увійти"
+  "login": "Увійти",
+  "increment": "Збільшити",
+  "decrement": "Зменшити"
 }
