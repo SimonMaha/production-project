@@ -58,8 +58,7 @@ export const Modal = (props: ModalProps) => {
 
   const mods: Record<string, boolean> = {
     [classes.opened]: isOpen,
-    [classes.isClosing]: isClosing,
-    [classes[theme]]: true,
+    [classes.isClosing]: isClosing
   };
 
   return (
