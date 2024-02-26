@@ -8,5 +8,7 @@
   "short language": "EN",
   "login": "Login",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "enter password": "Enter password",
+  "enter name": "Enter name"
 }

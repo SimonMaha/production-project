@@ -8,5 +8,7 @@
   "short language": "UA",
   "login": "Увійти",
   "increment": "Збільшити",
-  "decrement": "Зменшити"
+  "decrement": "Зменшити",
+  "enter password": "Введіть пароль",
+  "enter name": "Введіть ім'я"
 }
