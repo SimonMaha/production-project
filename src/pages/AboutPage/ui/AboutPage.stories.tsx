@@ -12,7 +12,9 @@ const meta = {
   },
   tags: ['autodocs'],
   decorators: [
-    StoreDecorator
+    StoreDecorator({
+      counter: { value: 0 }
+    })
   ],
 } satisfies Meta<typeof AboutPage>;
 
