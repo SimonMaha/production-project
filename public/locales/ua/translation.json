@@ -13,5 +13,6 @@
   "enter name": "Введіть ім'я",
   "authorization form": "Форма авторизації",
   "wrong username or password": "Невірне ім'я або пароль",
-  "logout": "Вийти"
+  "logout": "Вийти",
+  "profile page": "profile page"
 }

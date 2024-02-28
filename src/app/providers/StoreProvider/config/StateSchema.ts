@@ -2,12 +2,14 @@ import { CounterSchema } from 'entity/Counter';
 import { UserSchema } from 'entity/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { EnhancedStore, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit';
+import { ProfileSchema } from 'entity/Profile';
 
 export interface StateScheme {
   counter: CounterSchema;
   user: UserSchema;
   // Async
   loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateScheme;

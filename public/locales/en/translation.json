@@ -13,5 +13,6 @@
   "enter name": "Enter name",
   "authorization form": "Authorization form",
   "wrong username or password": "Wrong username or password",
-  "logout": "Logout"
+  "logout": "Logout",
+  "profile page": "profile page"
 }

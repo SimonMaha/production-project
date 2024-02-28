@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Joshua",
+    "lastname": "Valet",
+    "age": 57,
+    "currency": "MNT",
+    "country": "Mongolia",
+    "city": "Ulaanbaatar",
+    "username": "admin",
+    "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/YuanEmperorAlbumKhubilaiPortrait.jpg/220px-YuanEmperorAlbumKhubilaiPortrait.jpg"
   }
 }
