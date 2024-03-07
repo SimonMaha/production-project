@@ -31,8 +31,6 @@ export const Input = memo((props: InputProps) => {
       setIsFocused(true);
       inputRef.current?.focus();
     }
-
-    console.log(inputRef.current);
   }, [autofocus]);
 
   const onBlur = () => {
