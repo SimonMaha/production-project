@@ -14,5 +14,10 @@
   "authorization form": "Форма авторизації",
   "wrong username or password": "Невірне ім'я або пароль",
   "logout": "Вийти",
-  "profile page": "profile page"
+  "profile page": "Сторінка профіля",
+  "main": "Головна",
+  "about": "Про вебсайт",
+  "profile": "Профіль",
+  "select currency": "Виберіть валюту",
+  "select country": "Виберіть країну"
 }

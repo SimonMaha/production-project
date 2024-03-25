@@ -1,0 +1,19 @@
+{
+  "profile": "Профіль",
+  "edit": "Редагувати",
+  "firstname": "Ім'я",
+  "lastname": "Прізвище",
+  "an error occurred during the download": "Під час завантаження сталася помилка",
+  "try to refresh the page": "Спробуйте перезавантажити сторінку",
+  "cancel": "Відмінити",
+  "save": "Зберегти",
+  "age": "Вік",
+  "city": "Місто",
+  "username": "Ім'я юзера",
+  "avatar link": "Посилання на аватар",
+  "data is missing": "Дані не вказані",
+  "incorrect age": "Некоректний вік",
+  "incorrect country": "Некоректна країна",
+  "name and surname is required": "Ім'я та прізвище обов'язкові",
+  "server error on save": "Помилка сервера при збереженні"
+}

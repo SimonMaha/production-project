@@ -1,14 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './Input.module.scss';
 import { ChangeEvent, InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState } from 'react';
 
-type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface InputProps extends HtmlInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -19,12 +20,15 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly,
     ...otherProps
   } = props;
 
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [ isFocused, setIsFocused ] = useState(false);
   const [ caretPosition, setCaretPosition ] = useState(0);
+
+  const isCaretVisible = isFocused && !readonly;
 
   useEffect(() => {
     if (autofocus) {
@@ -51,8 +55,12 @@ export const Input = memo((props: InputProps) => {
     setCaretPosition(e.target.value.length);
   };
 
+  const mods: Mods = {
+    [classes.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(classes.InputWrapper, {}, [className])}>
+    <div className={classNames(classes.InputWrapper, mods, [className])}>
       { placeholder && (
         <div className={classes.placeholder}>
           {`${placeholder}>`}
@@ -60,7 +68,7 @@ export const Input = memo((props: InputProps) => {
       )}
       <div className={classes.caretWrapper}>
         <input
-          ref={inputRef }
+          ref={inputRef}
           className={classes.input}
           type={type}
           value={value}
@@ -68,9 +76,10 @@ export const Input = memo((props: InputProps) => {
           onFocus={onFocus}
           onBlur={onBlur}
           onSelect={onSelect}
+          readOnly={readonly}
           {...otherProps}
         />
-        { isFocused && (
+        { isCaretVisible && (
           <span
             className={classes.caret}
             style={{ left: `${caretPosition * 9}px` }}

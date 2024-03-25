@@ -1,0 +1,19 @@
+{
+  "profile": "Profile",
+  "edit": "Edit",
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "an error occurred during the download": "An error occurred during the download",
+  "try to refresh the page": "Try to refresh the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "city": "City",
+  "username": "Username",
+  "avatar link": "Avatar link",
+  "data is missing": "Data is missing",
+  "incorrect age": "Incorrect age",
+  "incorrect country": "Incorrect country",
+  "name and surname is required": "Name and surname is required",
+  "server error on save": "Server error on save"
+}

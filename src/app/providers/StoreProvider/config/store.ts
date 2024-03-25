@@ -1,18 +1,22 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { StateScheme } from './StateSchema';
+import {
+  configureStore,
+  Reducer,
+  ReducersMapObject,
+} from '@reduxjs/toolkit';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { counterReducer } from 'entity/Counter';
 import { userReducer } from 'entity/User';
 import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
 import type { To } from '@remix-run/router';
 import type { NavigateOptions } from 'react-router/dist/lib/context';
+import { $api } from 'shared/api/api';
 
 export function createReduxStore(
-  initialState?: StateScheme,
-  asyncReducers?: ReducersMapObject<StateScheme>,
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
   navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
-  const rootReducer: ReducersMapObject<StateScheme> = {
+  const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
@@ -20,18 +24,21 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<StateScheme>({
-    reducer: reducerManager.reduce ,
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce as Reducer<StateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: getDefaultMiddleware => getDefaultMiddleware({
-      thunk: {
-        extraArgument: {
-          api: $api,
-          navigate,
-        }
-      }
-    }),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware<{
+        thunk?: { extraArgument: ThunkExtraArg };
+      }>({
+        thunk: {
+          extraArgument: {
+            api: $api,
+            navigate,
+          },
+        },
+      }),
   });
 
   // @ts-expect-error need to wait for new lesson

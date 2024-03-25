@@ -1,13 +1,13 @@
 import { DeepPartial } from 'ts-essentials';
-import { StateScheme } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue', () => {
   test('should return counter value', () => {
-    const state: DeepPartial<StateScheme> = {
+    const state: DeepPartial<StateSchema> = {
       counter: { value: 10 }
     };
-    expect(getCounterValue(state as StateScheme)).toEqual(10);
+    expect(getCounterValue(state as StateSchema)).toEqual(10);
   });
 });
  

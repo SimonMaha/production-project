@@ -3,6 +3,9 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import ProfilePage from './ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Currency } from 'entity/Currency';
+import { Country } from 'entity/Country';
+import avatar from 'shared/assets/tests/storybook.jpg';
 
 const meta = {
   title: 'pages/ProfilePage',
@@ -12,7 +15,20 @@ const meta = {
   },
   tags: ['autodocs'],
   decorators: [
-    StoreDecorator({})
+    StoreDecorator({
+      profile: {
+        form: {
+          firstname: 'John',
+          lastname: 'Vasylyk',
+          age: 12,
+          currency: Currency.UAH,
+          country: Country.Ukraine,
+          city: 'Ternopil',
+          username: 'Vasylyk',
+          avatar,
+        }
+      }
+    })
   ],
 } satisfies Meta<typeof ProfilePage>;
 

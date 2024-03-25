@@ -7,7 +7,7 @@ import { AxiosInstance } from 'axios';
 import type { To } from '@remix-run/router';
 import type { NavigateOptions } from 'react-router/dist/lib/context';
 
-export interface StateScheme {
+export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   // Async
@@ -15,25 +15,26 @@ export interface StateScheme {
   profile?: ProfileSchema;
 }
 
-export type StateSchemaKey = keyof StateScheme;
+export type StateSchemaKey = keyof StateSchema;
 
 export interface ReducerManager {
-  getReducerMap: () => ReducersMapObject<StateScheme>;
-  reduce: (state: StateScheme, action: UnknownAction) => StateScheme;
+  getReducerMap: () => ReducersMapObject<StateSchema>;
+  reduce: (state: StateSchema, action: UnknownAction) => any;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 }
 
-export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate: (to: To, options?: NavigateOptions) => void;
+  navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
-export interface ThunkConfig<T> {
+export interface  ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArg;
+  state: StateSchema;
 }
