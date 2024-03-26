@@ -3,7 +3,7 @@ import { User, UserSchema } from 'entity/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localstorage';
 
 const initialState: UserSchema = {
-
+  _mounted: false,
 };
 
 export const userSlice = createSlice({
@@ -18,6 +18,7 @@ export const userSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user);
       }
+      state._mounted = true;
     },
     logout: (state) => {
       state.authData = undefined;
