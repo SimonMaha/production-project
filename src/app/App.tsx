@@ -13,10 +13,6 @@ const App = () => {
   const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
-    if (Math.random() > 0.9) {
-      throw new Error();
-    }
-
     dispatch(userActions.initAuthData());
   }, [dispatch]);
 

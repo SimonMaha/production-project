@@ -18,6 +18,7 @@
   "main": "Main",
   "about": "About",
   "profile": "Profile",
+  "articles": "Articles",
   "select currency": "Select currency",
   "select country": "Select country"
 }

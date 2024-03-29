@@ -5,7 +5,9 @@
   "about page": "about page",
   "age": "age",
   "an error occurred during the download": "an error occurred during the download",
+  "an error occurred while loading the article": "an error occurred while loading the article",
   "an unexpected error occurred": "an unexpected error occurred",
+  "article not found": "article not found",
   "authorization form": "authorization form",
   "avatar link": "avatar link",
   "cancel": "cancel",
@@ -39,5 +41,8 @@
   "sidebar": "sidebar",
   "try to refresh the page": "try to refresh the page",
   "username": "username",
-  "wrong username or password": "wrong username or password"
+  "wrong username or password": "wrong username or password",
+  "Произошла ошибка при загрузке статьи": {
+    "": ""
+  }
 }

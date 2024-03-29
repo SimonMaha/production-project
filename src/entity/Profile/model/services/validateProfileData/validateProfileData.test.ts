@@ -16,7 +16,6 @@ const data = {
 describe('validateProfileData.test', () => {
   test('success', async () => {
     const result = validateProfileData(data);
-    console.log('result: ', result);
 
     expect(result).toEqual([]);
   });
